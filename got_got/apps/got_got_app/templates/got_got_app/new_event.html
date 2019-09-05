@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create a New Event</title>
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+
+<body>
+	<div class="header">
+		<h1>Got GOT?</h1>
+		<a class="dashboard" href="/dashboard">Dashboard</a><p class="pipe"> | </p><a class="events" href="/events">Upcoming Events</a>
+		<a href="/">Log Out</a><br>
+	</div>
+	
+	<div class="registration">
+		<h1>Add an Upcoming Event</h1>
+		<form action="/add_event" method="POST">
+			{% csrf_token %}
+			<p>Title:</p>
+			<input class="event_title" type="text" name="title">
+			<br>
+			<p>Genre:</p>
+			<select class="event_genre" name="genre">
+				<option value="select">Select Genre</option>
+				<option value="action">Action</option>
+				<option value="comedy">Comedy</option>
+				<option value="drama">Drama</option>
+				<option value="horror">Horror</option>
+			</select>
+			<br>
+			<p>When:</p>
+			<input class="event_time" type="date" name="when">
+			<br>
+			<p>Location:</p>
+			<input class="event_location" type="text" name="location">
+			<br>
+			<button class="create_event">Create Event</button>
+		</form>
+		<br>
+		{% if messages %}
+			<ul class="messages">
+	    	{% for message in messages %}
+	    		<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+	    	{% endfor %}
+			</ul>
+		{% endif %}
+	</div>
+	
+</body>
+</html>

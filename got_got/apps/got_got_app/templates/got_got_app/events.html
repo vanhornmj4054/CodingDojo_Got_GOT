@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upcoming Events</title>
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<body>
+	<div class="header">
+		<h1>Got GOT?</h1>
+		<a class="dashboard" href="/dashboard">Dashboard</a><p class="pipe"> | </p><a class="events" href="/events">Upcoming Events</a>
+		<a href="/">Log Out</a><br>
+		<br>
+	</div>
+	<div>
+		<h2>All Upcoming Events</h2>
+		<table class="event_table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Location</th>
+					<th>When</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in upcoming_events %}
+				<tr>
+					<td>{{item.title}}</td>
+					<td>{{item.location}}</td>
+					<td>{{item.time_date}}</td>
+					<td>
+						<a href="/view_event/{{item.id}}">View</a> | <a href="">Edit</a>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

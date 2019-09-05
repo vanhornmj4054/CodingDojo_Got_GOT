@@ -1,0 +1,205 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	font-family: sans-serif;
+}
+
+.header {
+	display: inline-block;
+	vertical-align: top;
+	width: 900px;
+	margin: 10px;
+	border-bottom: solid black 2px;
+}
+
+.header h1 {
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.dashboard {
+	float: bottom;
+	vertical-align: top;
+	display: inline-block;
+	margin-left: 510px;
+	margin-top: 20px;
+}
+
+.events {
+	float: bottom;
+	vertical-align: top;
+	display: inline-block;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+.pipe {
+	float: bottom;
+	display: inline-block;
+	vertical-align: top;
+	margin-top:	20px;
+	margin-left: 10px;
+}
+
+.registration {
+	margin: 40px;
+	vertical-align: top;
+}
+
+.registration h1 {
+	margin-left: 100px;
+	font-weight: normal;
+	margin-top: -20px;
+	
+}
+
+.registration p {
+	display: inline-block;
+	margin-top: 20px;
+	margin-right: 20px;
+	
+}
+
+.registration .firstname {
+	margin-left: 101px;
+	height: 20px;
+	
+}
+
+.registration .lastname {
+	margin-left: 103px;
+	height: 20px;
+}
+
+.registration .email {
+	margin-left: 140px;
+	height: 20px;
+}
+
+.registration .password {
+	margin-left: 110px;
+	height: 20px;
+}
+
+.registration .confirm {
+	margin-left: 95px;
+	height: 20px;
+}
+
+.registration button {
+	margin-top: 20px;
+	margin-left: 150px;
+	height: 26px;
+	width: 60px;
+	border: solid black 2px;
+	box-shadow: 2px 2px;
+	
+}
+
+.login {
+	vertical-align: top;
+	margin-left: 400px;
+	margin-top: -350px;
+	/*display: inline-block;*/
+	
+}
+
+.login h1 {
+	margin-left: 100px;
+	font-weight: normal;
+	
+}
+
+.login p {
+	display: inline-block;
+	margin-top: 20px;
+	margin-right: 20px;
+	
+}
+
+.login .email {
+	margin-left: 106px;
+	height: 20px;
+	
+}
+
+.login .password {
+	margin-left: 77px;
+	height: 20px;
+	
+}
+
+.login button {
+	margin-top: 20px;
+	margin-left: 120px;
+	height: 26px;
+	width: 60px;
+	border: solid black 2px;
+	box-shadow: 2px 2px;
+	
+}
+
+.stats {
+	display: inline-block;
+	margin: 10px;
+}
+
+.stats_box {
+	display: inline-block;
+	margin-top: 6px;
+	padding: 10px;
+	height: 140px;
+	width: 260px;
+	border: solid black 2px;
+}
+
+.event_title {
+	margin-left: 32px;
+}
+
+.event_genre {
+	margin-left: 17px;
+}
+
+
+.event_time {
+	margin-left: 20px;
+}
+
+
+.event_location {
+	margin-left: 2px;
+}
+
+.registration .create_event{
+	margin-left: 0px;
+	height: 30px;
+	width: 100px;
+}
+
+.event_table {
+	width: 100%;
+	height: 50px;
+	text-align: left;
+}
+
+table, th, td {
+	border: solid black 1px;
+
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+.create {
+	vertical-align: top;
+	display: inline-block;
+	margin-left: 760px;
+	margin-top: -180px;
+	height: 25px;
+	width: 120px;
+}
+
+.attendees {
+	
+}
+

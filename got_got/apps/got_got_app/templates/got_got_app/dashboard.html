@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+
+<body>
+	<div class="header">
+		<h1>Got GOT?</h1>
+		<a class="dashboard" href="/dashboard">Dashboard</a><p class="pipe"> | </p><a class="events" href="/events">Upcoming Events</a>
+		<a href="/">Log Out</a><br>
+		<br>
+	</div>
+	<div class="stats">
+		<h2>Stats</h2>
+		<div class="stats_box">
+			<p>Name: {{user.first_name}} {{user.last_name}}</p>
+			<p># of Events Hosted: {{host_count}}</p>
+			<p># of Events Joined: {{joined_count}}</p>
+			<p>Registration Date: {{user.created_at}}</p>
+		</div>
+	</div>
+	<form action="/create" method="POST">
+		{% csrf_token %}
+		<button class="create">Create a TV Party</button>
+	</form>
+
+	<div class="upcoming_events">
+		<h2>Your Upcoming Events</h2>
+		<table class="event_table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Location</th>
+					<th>When</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in user.events_attending.all %}
+				<tr>
+					<td>{{item.title}}</td>
+					<td>{{item.location}}</td>
+					<td>{{item.time_date}}</td>
+					<td>
+						<a href="/view_event/{{item.id}}">View</a> | <a href="">Edit</a>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>	
+	</div>
+</body>
+</html>

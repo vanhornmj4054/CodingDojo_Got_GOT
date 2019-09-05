@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View Event</title>
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<body>
+	<div class="header">
+		<h1>Got GOT?</h1>
+		<a class="dashboard" href="/dashboard">Dashboard</a><p class="pipe"> | </p><a class="events" href="/events">Upcoming Events</a>
+		<a href="/">Log Out</a><br>
+		<br>
+	</div>
+	<div class="party">
+		<h2>{{event.title}}</h2>
+		<p>Genre: {{event.genre}}</p>
+		<p>When: {{event.time_date}}</p>
+		<p>Location: {{event.location}}</p>
+	</div>
+	<div class="attendees">
+		<h2>Attendees:</h2>
+		{% for user in event.attendees.all %}
+			<p>{{user.first_name}}</p>
+		{%endfor%}
+		{% if user.id == event.created_by.id %}
+			<form action="/cancel_event/{{event.id}}" method="POST">
+			{% csrf_token %}
+			<button>Cancel Event</button>
+			</form>
+		{% else %}
+			<form action="/join_event/{{event.id}}" method="POST">
+			{% csrf_token %}
+			<button>Join Event</button>
+			</form>
+		{% endif %}
+		
+	</div>
+	<br>
+	<a class="events" href="/events">Go Back</a>
+		
+</body>
+</html>
+	
